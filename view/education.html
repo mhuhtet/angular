@@ -1,0 +1,12 @@
+<h3>{{people.name}} Education Data</h3>
+
+<table>
+        <tr>
+            <td>School</td>
+            <td>Education Level</td>
+        </tr>
+    <tr ng-repeat="grade in people.grade">
+        <td>{{grade.school}}</td>
+        <td>{{grade.education}}</td>
+    </tr>
+</table>

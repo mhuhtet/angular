@@ -1,0 +1,25 @@
+<h3>Iterating through data with ng-repeat</h3>
+  
+    Fliter : <input type="text" ng-model="filterText.name">
+   
+    <table>
+        <tr>
+            <td ng-click="doSort('name')">Name</td>
+            <td ng-click="doSort('township')">Township</td>
+            <td ng-click="doSort('age')">Age</td>
+            <td ng-click="doSort('born')">Birth Of Date</td>
+            <td ng-click="doSort('born')">Income</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr ng-repeat="person in people | filter:filterText | orderBy:sortBy:reverse">
+            <td>{{person.name}}</td>
+            <td>{{person.township}}</td>
+            <td>{{person.age}}</td>
+            <td>{{person.born | date }}</td>
+            <td>{{person.income | currency }}</td>
+            <td><a href="#/education/{{person.id}}">Education Detail</a></td>
+        </tr>
+        
+    </table>
+    <br>
+    <span>Total People: {{ people.length }}</span>
